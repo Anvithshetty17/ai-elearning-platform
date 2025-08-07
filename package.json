@@ -1,0 +1,51 @@
+{
+  "name": "ai-elearning-platform",
+  "version": "1.0.0",
+  "description": "Comprehensive AI-powered E-Learning Platform with automated lecture generation",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run ml-services\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "ml-services": "cd ml-services && python app.py",
+    "build": "cd client && npm run build",
+    "build:server": "cd server && npm install",
+    "build:client": "cd client && npm install && npm run build",
+    "build:ml": "cd ml-services && pip install -r requirements.txt",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install && cd ../ml-services && pip install -r requirements.txt",
+    "start": "cd server && npm start",
+    "test": "cd server && npm test && cd ../client && npm test",
+    "lint": "cd server && npm run lint && cd ../client && npm run lint",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [
+    "ai",
+    "elearning",
+    "education",
+    "machine-learning",
+    "text-to-speech",
+    "video-generation",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "flask",
+    "python"
+  ],
+  "author": "Anvithshetty17",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Anvithshetty17/ai-elearning-platform.git"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0",
+    "python": ">=3.8.0"
+  }
+}
